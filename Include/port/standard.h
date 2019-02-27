@@ -32,10 +32,16 @@ extern "C" {
 #define U64_MAX     UMAX(T_U64)
 
 #ifndef NULL
-#define NULL (void*)0          /* NULL or NIL pointer */
+#define NULL      ((void*)(0))   /* NULL or NIL pointer */
 #endif
 
-#define UNUSED(x) (void)(x)
+#define UNUSED(x)    (void)(x)
+
+#define RETURN_SUCCESS        (0)
+#define RETURN_ERR_GENERAL    (-1)
+#define RETURN_ERR_BADPARA    (-2)
+#define RETURN_ERR_BADSTATUS  (-3)
+#define RETURN_ERR_OUTOFRES   (-4)
 
 typedef int8_t    T_SChar; /*!< 1 Byte  -127 .. 128               */
 typedef int8_t    T_S8;    /*!< 1 Byte  -127 .. 128               */
